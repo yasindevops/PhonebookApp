@@ -133,33 +133,33 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
 ### At the end of the project, following topics are to be covered;
 
-- Programming with Python
+- Programming with Python.
 
-- Programming with SQL
+- Programming with SQL.
 
-- Web application programming with Python Flask Framework
+- Web application programming with Python Flask Framework.
 
-- MySQL Database Configuration
+- MySQL Database Configuration.
 
-- Bash scripting
+- Bash scripting.
 
-- AWS EC2 Launch Template Configuration
+- AWS EC2 Launch Template Configuration.
 
-- AWS EC2 Application Load Balancer Configuration
+- AWS EC2 Application Load Balancer Configuration.
 
-- AWS EC2 ALB Target Group Configuration
+- AWS EC2 ALB Target Group Configuration.
 
-- AWS EC2 ALB Listener Configuration
+- AWS EC2 ALB Listener Configuration.
 
-- AWS EC2 Auto Scaling Group Configuration
+- AWS EC2 Auto Scaling Group Configuration.
 
-- AWS Relational Database Service Configuration
+- AWS Relational Database Service Configuration.
 
-- AWS EC2 Security Groups Configuration
+- AWS EC2 Security Groups Configuration.
 
-- AWS Cloudformation Service
+- AWS Cloudformation Service.
 
-- AWS Cloudformation Template Design
+- AWS Cloudformation Template Design.
 
 - Git & Github for Version Control System
 
