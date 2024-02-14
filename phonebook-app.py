@@ -1,14 +1,14 @@
-# Import Flask modules
+# Import Flask modules:
 from flask import Flask, request, render_template
 from flaskext.mysql import MySQL
 
 # Create an object named app
 app = Flask(__name__)
 
-# This "/home/ec2-user/dbserver.endpoint" file has to be created from cloudformation template and it has RDS endpoint
+# This "/home/ec2-user/dbserver.endpoint" file has to be created from cloudformation template and it has RDS endpoint:
 db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8') 
 
-# Configure mysql database
+# Configure mysql database:
 
 app.config['MYSQL_DATABASE_HOST'] = db_endpoint.readline().strip()
 app.config['MYSQL_DATABASE_USER'] = 'admin'
@@ -22,7 +22,7 @@ connection = mysql.connect()
 connection.autocommit(True)
 cursor = connection.cursor()
 
-# Write a function named `init_todo_db` create phonebook table within clarusway_phonebook db, if it doesn't exist
+# Write a function named `init_todo_db` create phonebook table within clarusway_phonebook db, if it doesn't exist:
 
 def init_phonebook_db():
     phonebook_table = """
@@ -35,7 +35,7 @@ def init_phonebook_db():
     """
     cursor.execute(phonebook_table) # This is the connection to our database.
 
-# Write a function named `find_persons` which finds persons' record using the keyword from the phonebook table in the db,and returns result as list of dictionary 
+# Write a function named `find_persons` which finds persons' record using the keyword from the phonebook table in the db,and returns result as list of dictionary: 
 # `[{'id': 1, 'name':'XXXX', 'number': 'XXXXXX'}]`.
 
 # This function is to find my results that has "keyword" into database
@@ -52,7 +52,7 @@ def find_persons(keyword):
 
 
 # Write a function named `insert_person` which inserts person into the phonebook table in the db,
-# and returns text info about result of the operation
+# and returns text info about result of the operation:
 
 def insert_person(name, number):
     query = f"""
@@ -71,7 +71,7 @@ def insert_person(name, number):
     return f'Person {name.strip().title()} added to Phonebook successfully' # person given by user added to phonebook 
 
 # Write a function named `update_person` which updates the person's record in the phonebook table,
-# and returns text info about result of the operation
+# and returns text info about result of the operation:
 def update_person(name, number):
     query = f"""
     SELECT * FROM phonebook WHERE name like '{name.strip().lower()}';
@@ -91,7 +91,7 @@ def update_person(name, number):
 
 
 # Write a function named `delete_person` which deletes person record from the phonebook table in the db,
-# and returns returns text info about result of the operation
+# and returns returns text info about result of the operation:
 def delete_person(name):
     query = f"""
     SELECT * FROM phonebook WHERE name like '{name.strip().lower()}';
@@ -109,7 +109,7 @@ def delete_person(name):
 
 # Write a function named `find_records` which finds phone records by keyword using `GET` and `POST` methods,
 # using template files named `index.html` given under `templates` folder
-# and assign to the static route of ('/')
+# and assign to the static route of ('/'):
 @app.route('/', methods=['GET', 'POST'])
 def find_records():
     if request.method == 'POST':
@@ -122,7 +122,7 @@ def find_records():
 
 # Write a function named `add_record` which inserts new record to the database using `GET` and `POST` methods,
 # using template files named `add-update.html` given under `templates` folder
-# and assign to the static route of ('add')
+# and assign to the static route of ('add'):
 @app.route('/add', methods=['GET', 'POST'])
 def add_record():
     if request.method == 'POST':
@@ -143,7 +143,7 @@ def add_record():
 
 # Write a function named `update_record` which updates the record in the db using `GET` and `POST` methods,
 # using template files named `add-update.html` given under `templates` folder
-# and assign to the static route of ('update')
+# and assign to the static route of ('update'):
 @app.route('/update', methods=['GET', 'POST'])
 def update_record():
     if request.method == 'POST':
@@ -163,7 +163,7 @@ def update_record():
 
 # Write a function named `delete_record` which updates the record in the db using `GET` and `POST` methods,
 # using template files named `delete.html` given under `templates` folder
-# and assign to the static route of ('delete')
+# and assign to the static route of ('delete'):
 @app.route('/delete', methods=['GET', 'POST'])
 def delete_record():
     if request.method == 'POST':
@@ -176,7 +176,7 @@ def delete_record():
         return render_template('delete.html', show_result=False, not_valid=False, developer_name='Oktay')
 
 
-# Add a statement to run the Flask application which can be reached from any host on port 80.
+# Add a statement to run the Flask application which can be reached from any host on port 80:
 if __name__== '__main__':
     init_phonebook_db()
     # app.run(debug=True)
