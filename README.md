@@ -24,7 +24,7 @@ The Phonebook Application aims to create a phonebook application in Python and d
 
 - Phone numbers in the app can be in any format, but the inputs are checked to prevent string type. If the user inputs string in the number field, user is warned with text message.
 
-- Example for user inputs and respective formats
+- Example for user inputs and respective formats:
 
 ```text
 Input in username field          Format to convert
@@ -54,7 +54,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
     - delete a record using `delete.html`.
 
-  - User input can be either integer or string, thus the input should be checked for the followings,
+  - User input can be either integer or string, thus the input should be checked for the followings;
 
     - The input for name should be string, and input for the phone number should be decimal number.
 
@@ -64,7 +64,7 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
   - The Web Application should be accessible via web browser from anywhere.
 
-- Lastly, you are requested to push this program to the project repository on the Github and deploy your solution in the development environment on AWS Cloud using AWS Cloudformation Service to showcase your project. In the development environment, you can configure your Cloudformation template using the followings,
+- Lastly, you are requested to push this program to the project repository on the Github and deploy your solution in the development environment on AWS Cloud using AWS Cloudformation Service to showcase your project. In the development environment, you can configure your Cloudformation template using the followings;
 
   - The application stack should be created with new AWS resources.
 
@@ -78,40 +78,40 @@ thousand                         Warning -> 'Invalid input: Phone number should 
 
     - use all Availability Zones.
 
-    - set desired capacity of instances to `2`
+    - set desired capacity of instances to `2`.
 
-    - set minimum size of instances to `1`
+    - set minimum size of instances to `1`.
 
-    - set maximum size of instances to `3`
+    - set maximum size of instances to `3`.
 
-    - set health check grace period to `90 seconds`
+    - set health check grace period to `90 seconds`.
 
-    - set health check type to `ELB`
+    - set health check type to `ELB`.
 
   - The Launch Template should be configured to;
 
     - prepare Python Flask environment on EC2 instance,
 
-    - download the Phonebook Application code from Github repository,
+    - download the Phonebook Application code from Github repository.
 
     - deploy the application on Flask Server.
 
   - EC2 Instances type can be configured as `t2.micro`.
 
-  - Instance launched by Cloudformation should be tagged `Web Server of StackName`
+  - Instance launched by Cloudformation should be tagged `Web Server of StackName`.
 
   - For RDS Database Instance;
   
-    - Instance type can be configured as `db.t2.micro`
+    - Instance type can be configured as `db.t2.micro`.
 
     - Database engine can be `MySQL` with version of `8.0.28`.
 
   - Phonebook Application Website URL should be given as output by Cloudformation Service, after the stack created.
 
- - Nice to have options
-      - Using  PRIVATE REPO in GitHub
-      - Fetching the Database password from ASW SSM Parameter Store 
-      - Fetching the GitHub repo TOKEN from ASW SSM Parameter Store 
+ - Nice to have options :
+      - Using  PRIVATE REPO in GitHub.
+      - Fetching the Database password from ASW SSM Parameter Store.
+      - Fetching the GitHub repo TOKEN from ASW SSM Parameter Store.
 
 ## Project Skeleton 
 
